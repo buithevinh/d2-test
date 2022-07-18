@@ -1,0 +1,28 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/d2-test-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/d2-test-e2e/cypress.json",
+        "devServerTarget": "d2-test:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "d2-test:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/d2-test-e2e/**/*.js"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["d2-test"]
+}

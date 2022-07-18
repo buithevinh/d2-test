@@ -1,0 +1,23 @@
+.active {
+  background: linear-gradient(91.47deg, #DA458F -6%, #DA34DD 113.05%);
+}
+.bg_tag {
+  background: linear-gradient(91.47deg, rgba(218, 69, 143, 0.4) -6%, rgba(218, 52, 221, 0.4) 113.05%);
+  &:hover {
+    background: linear-gradient(91.47deg, #DA458F -6%, #DA34DD 113.05%);
+  }
+}
+.tag_content {
+  position: relative;
+  &::after {
+    content: '';
+    background: linear-gradient(81.35deg, rgba(218, 69, 143, 0) 7.2%, rgb(18 20 46) 52.38%);
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: 4;
+    pointer-events: none;
+  }
+}
